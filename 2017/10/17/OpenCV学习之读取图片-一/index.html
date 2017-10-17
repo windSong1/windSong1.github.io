@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,opencv," />
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="天青色等烟雨,而我在的等你。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="西楚之歌">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="读一张图片使用cv2.imread(path, flag)函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:  cv2.IMREAD_COLOR : 加载一张有颜色的图片,任何透明度的设置都会被忽略,这是默认格式 cv2.IMREAD_GRAYSCALE : 以灰度模式加载一张图片 cv2.IMREAD_UNCHANGED : 不改变图片的任">
+<meta name="keywords" content="python,opencv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCV学习之读取图片(一)">
+<meta property="og:url" content="http://yoursite.com/2017/10/17/OpenCV学习之读取图片-一/index.html">
 <meta property="og:site_name" content="西楚之歌">
-<meta property="og:description" content="天青色等烟雨,而我在的等你。">
+<meta property="og:description" content="读一张图片使用cv2.imread(path, flag)函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:  cv2.IMREAD_COLOR : 加载一张有颜色的图片,任何透明度的设置都会被忽略,这是默认格式 cv2.IMREAD_GRAYSCALE : 以灰度模式加载一张图片 cv2.IMREAD_UNCHANGED : 不改变图片的任">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-2e0ba03722dd5531.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-17T07:04:08.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="西楚之歌">
-<meta name="twitter:description" content="天青色等烟雨,而我在的等你。">
+<meta name="twitter:title" content="OpenCV学习之读取图片(一)">
+<meta name="twitter:description" content="读一张图片使用cv2.imread(path, flag)函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:  cv2.IMREAD_COLOR : 加载一张有颜色的图片,任何透明度的设置都会被忽略,这是默认格式 cv2.IMREAD_GRAYSCALE : 以灰度模式加载一张图片 cv2.IMREAD_UNCHANGED : 不改变图片的任">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/8225615-2e0ba03722dd5531.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/17/OpenCV学习之读取图片-一/"/>
 
 
 
 
 
-  <title>西楚之歌</title>
+  <title>OpenCV学习之读取图片(一) | 西楚之歌</title>
   
 
 
@@ -143,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,9 +250,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -279,9 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/17/OpenCV学习之读取图片-一/" itemprop="url">OpenCV学习之读取图片(一)</a></h1>
+          <h1 class="post-title" itemprop="name headline">OpenCV学习之读取图片(一)</h1>
         
 
         <div class="post-meta">
@@ -342,9 +343,7 @@
       
 
       
-        
-          
-            <h2 id="读一张图片"><a href="#读一张图片" class="headerlink" title="读一张图片"></a>读一张图片</h2><p>使用<strong><em>cv2.imread(path, flag)</em></strong>函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:</p>
+        <h2 id="读一张图片"><a href="#读一张图片" class="headerlink" title="读一张图片"></a>读一张图片</h2><p>使用<strong><em>cv2.imread(path, flag)</em></strong>函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:</p>
 <ul>
 <li>cv2.IMREAD_COLOR : 加载一张有颜色的图片,任何透明度的设置都会被忽略,这是默认格式</li>
 <li>cv2.IMREAD_GRAYSCALE : 以灰度模式加载一张图片</li>
@@ -361,8 +360,6 @@
 <h2 id="保存一张图片"><a href="#保存一张图片" class="headerlink" title="保存一张图片"></a>保存一张图片</h2><p>我们用<strong><em>cv2.imwrite()</em></strong>来保存一张图片, 第一个参数为图片名字,第二个参数为要保存的图片,代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cv2.imwrite(<span class="string">'messigray.png'</span>,img)</div></pre></td></tr></table></figure></p>
 <h2 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h2><p>如下程序, 我们以灰度化格式加载一个图片,显示,如果按下’s’键, 保存图片并退出,如果按下<strong><em>ESC</em></strong>按键,直接退出,代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line">img = cv2.imread(<span class="string">'messi5.jpg'</span>,<span class="number">0</span>)</div><div class="line">cv2.imshow(<span class="string">'image'</span>,img)</div><div class="line">k = cv2.waitKey(<span class="number">0</span>)</div><div class="line"><span class="keyword">if</span> k == <span class="number">27</span>:         <span class="comment"># wait for ESC key to exit</span></div><div class="line">    cv2.destroyAllWindows()</div><div class="line"><span class="keyword">elif</span> k == ord(<span class="string">'s'</span>): <span class="comment"># wait for 's' key to save and exit</span></div><div class="line">    cv2.imwrite(<span class="string">'messigray.png'</span>,img)</div><div class="line">    cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -377,280 +374,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/16/如何在Ubuntu上安装OpenCV/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="林雨轩">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="西楚之歌">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/16/如何在Ubuntu上安装OpenCV/" itemprop="url">如何在Ubuntu上安装OpenCV?</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-16T22:30:05+08:00">
-                2017-10-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/python/" rel="tag"># python</a>
           
-            
+            <a href="/tags/opencv/" rel="tag"># opencv</a>
           
-
-          
-          
-             <span id="/2017/10/16/如何在Ubuntu上安装OpenCV/" class="leancloud_visitors" data-flag-title="如何在Ubuntu上安装OpenCV?">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>网上有很多类似的教程,但是都不够全面,导致编译的时候经常出错,在踩了很多坑之后,此处给出一个完美的教程.<br>目前Python有两个版本, Python2.7和Python3,不同版本的Python安装的OpenCV的版本也不同,在本教程中,两个版本都会涉及到,因此不用担心,你唯一需要做的就是,想好自己用哪一个版本的Python,否则如果版本不一致,后期进行编译的时候会产生错误.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/16/如何在Ubuntu上安装OpenCV/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/16/如何在Ubuntu上安装OpenCV/" rel="next" title="如何在Ubuntu上安装OpenCV?">
+                <i class="fa fa-chevron-left"></i> 如何在Ubuntu上安装OpenCV?
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/Hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="林雨轩">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="西楚之歌">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/14/Hello-world/" itemprop="url">Hello world</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T18:49:05+08:00">
-                2017-10-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/10/14/Hello-world/" class="leancloud_visitors" data-flag-title="Hello world">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>你好,欢迎来到我的个人博客。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -660,10 +415,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -671,6 +427,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTM1Mi83OTE1"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -691,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -745,6 +519,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读一张图片"><span class="nav-number">1.</span> <span class="nav-text">读一张图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示一张图片"><span class="nav-number">2.</span> <span class="nav-text">显示一张图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存一张图片"><span class="nav-number">3.</span> <span class="nav-text">保存一张图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#综合运用"><span class="nav-number">4.</span> <span class="nav-text">综合运用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -878,6 +668,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -906,6 +700,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
