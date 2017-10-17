@@ -343,25 +343,18 @@
 
       
         
-          
-            <h2 id="读一张图片"><a href="#读一张图片" class="headerlink" title="读一张图片"></a>读一张图片</h2><p>使用<strong><em>cv2.imread(path, flag)</em></strong>函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:</p>
+          <h2 id="读一张图片"><a href="#读一张图片" class="headerlink" title="读一张图片"></a>读一张图片</h2><p>使用<strong><em>cv2.imread(path, flag)</em></strong>函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:</p>
 <ul>
 <li>cv2.IMREAD_COLOR : 加载一张有颜色的图片,任何透明度的设置都会被忽略,这是默认格式</li>
 <li>cv2.IMREAD_GRAYSCALE : 以灰度模式加载一张图片</li>
-<li>cv2.IMREAD_UNCHANGED : 不改变图片的任何格式加载图片,不会忽略透明度,也就是alpha通道<br><strong><em>注意:</em></strong> 上述flag太长,不易书写,可以用1, 0, -1来分别代替<br>代码如下:  </li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line"><span class="comment"># Load an color image in grayscale</span></div><div class="line">img = cv2.imread(<span class="string">'messi5.jpg'</span>,<span class="number">0</span>)</div></pre></td></tr></table></figure>
-<h2 id="显示一张图片"><a href="#显示一张图片" class="headerlink" title="显示一张图片"></a>显示一张图片</h2><p>使用<strong><em>cv2.imshow()</em></strong> 来生成一个窗口显示一张图片,窗口大小会自适应图片的大小,这个函数的第一个参数是窗体的名字,为一个字符串,第二个参数是要显示的图片,我们可以创建很多个窗体,但是注意窗体的的名字不能相同<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cv2.imshow(<span class="string">'image'</span>,img)</div><div class="line">cv2.waitKey(<span class="number">0</span>)</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
-<p>以下是我显示的图片:<br><img src="http://upload-images.jianshu.io/upload_images/8225615-2e0ba03722dd5531.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong><em>cv2.waitKey()</em></strong>是一个绑定了键盘事件的函数,它的参数是毫秒级的时间数,程序执行到此处会停留,直到时间到了或者在在该时间之内按下了相应的按键,这时候程序才会继续执行, 如果传给它一个0, 这时候,等待的时间会无限延长,直到按下相应的按键, 程序才会继续.<br><strong><em>cv2.destroyAllWindows()</em></strong>会销毁所有创建的窗体, 回收资源, 我们也可以用<strong><em>cv2.destroyWindow()</em></strong>来想回指定窗口,此时,<strong><em>cv2.destroyWindow()</em></strong>的参数就是我们要销毁的窗体的名字.<br>我们同样可以,先创建一个窗体,稍后再指定图片显示在这个窗体上, 创建窗体的函数为<strong><em>cv2.namedWindow()</em></strong>这个函数有两个参数,第一个参数为窗体名字,是一个字符串,第二个参数表示,窗口大小是否可以调整,</p>
-<ul>
-<li>如果为<strong><em>cv2.WINDOW_AUTOSIZE</em></strong>, 此时窗体会自适应图片大小,图片多大,窗体就多大,窗体不能调整</li>
-<li>如果为<strong><em>cv2.WINDOW_NORMAL</em></strong>, 此时窗体大小可以调整,同时会有一个拖动条, 来查看图片其余部分</li>
-</ul>
-<p>如下代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cv2.namedWindow(<span class="string">'image'</span>, cv2.WINDOW_NORMAL)</div><div class="line">cv2.imshow(<span class="string">'image'</span>,img)</div><div class="line">cv2.waitKey(<span class="number">0</span>)</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
-<h2 id="保存一张图片"><a href="#保存一张图片" class="headerlink" title="保存一张图片"></a>保存一张图片</h2><p>我们用<strong><em>cv2.imwrite()</em></strong>来保存一张图片, 第一个参数为图片名字,第二个参数为要保存的图片,代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cv2.imwrite(<span class="string">'messigray.png'</span>,img)</div></pre></td></tr></table></figure></p>
-<h2 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h2><p>如下程序, 我们以灰度化格式加载一个图片,显示,如果按下’s’键, 保存图片并退出,如果按下<strong><em>ESC</em></strong>按键,直接退出,代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line">img = cv2.imread(<span class="string">'messi5.jpg'</span>,<span class="number">0</span>)</div><div class="line">cv2.imshow(<span class="string">'image'</span>,img)</div><div class="line">k = cv2.waitKey(<span class="number">0</span>)</div><div class="line"><span class="keyword">if</span> k == <span class="number">27</span>:         <span class="comment"># wait for ESC key to exit</span></div><div class="line">    cv2.destroyAllWindows()</div><div class="line"><span class="keyword">elif</span> k == ord(<span class="string">'s'</span>): <span class="comment"># wait for 's' key to save and exit</span></div><div class="line">    cv2.imwrite(<span class="string">'messigray.png'</span>,img)</div><div class="line">    cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
-
-          
+<li>cv2.IMREAD_UNCHANGED : 不改变图片的任何格式加载图片,不会忽略透明度,也就是alpha通道<br><strong><em>注意:</em></strong> 上述flag太长,不易书写,可以用1, 0, -1来分别代替
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/17/OpenCV学习之读取图片-一/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

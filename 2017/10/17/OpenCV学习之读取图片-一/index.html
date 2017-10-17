@@ -88,7 +88,7 @@
 <meta property="og:description" content="读一张图片使用cv2.imread(path, flag)函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:  cv2.IMREAD_COLOR : 加载一张有颜色的图片,任何透明度的设置都会被忽略,这是默认格式 cv2.IMREAD_GRAYSCALE : 以灰度模式加载一张图片 cv2.IMREAD_UNCHANGED : 不改变图片的任">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-2e0ba03722dd5531.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-17T07:04:08.406Z">
+<meta property="og:updated_time" content="2017-10-17T07:06:02.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCV学习之读取图片(一)">
 <meta name="twitter:description" content="读一张图片使用cv2.imread(path, flag)函数来读一张图片,, 第一个参数表示图片的路径,是一个字符串,第二个参数表示读取的标识, 有以下选项可选:  cv2.IMREAD_COLOR : 加载一张有颜色的图片,任何透明度的设置都会被忽略,这是默认格式 cv2.IMREAD_GRAYSCALE : 以灰度模式加载一张图片 cv2.IMREAD_UNCHANGED : 不改变图片的任">
@@ -347,7 +347,8 @@
 <ul>
 <li>cv2.IMREAD_COLOR : 加载一张有颜色的图片,任何透明度的设置都会被忽略,这是默认格式</li>
 <li>cv2.IMREAD_GRAYSCALE : 以灰度模式加载一张图片</li>
-<li>cv2.IMREAD_UNCHANGED : 不改变图片的任何格式加载图片,不会忽略透明度,也就是alpha通道<br><strong><em>注意:</em></strong> 上述flag太长,不易书写,可以用1, 0, -1来分别代替<br>代码如下:  </li>
+<li>cv2.IMREAD_UNCHANGED : 不改变图片的任何格式加载图片,不会忽略透明度,也就是alpha通道<br><strong><em>注意:</em></strong> 上述flag太长,不易书写,可以用1, 0, -1来分别代替  <a id="more"></a>
+代码如下:  </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line"><span class="comment"># Load an color image in grayscale</span></div><div class="line">img = cv2.imread(<span class="string">'messi5.jpg'</span>,<span class="number">0</span>)</div></pre></td></tr></table></figure>
 <h2 id="显示一张图片"><a href="#显示一张图片" class="headerlink" title="显示一张图片"></a>显示一张图片</h2><p>使用<strong><em>cv2.imshow()</em></strong> 来生成一个窗口显示一张图片,窗口大小会自适应图片的大小,这个函数的第一个参数是窗体的名字,为一个字符串,第二个参数是要显示的图片,我们可以创建很多个窗体,但是注意窗体的的名字不能相同<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cv2.imshow(<span class="string">'image'</span>,img)</div><div class="line">cv2.waitKey(<span class="number">0</span>)</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
