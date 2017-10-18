@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,opencv," />
+  <meta name="keywords" content="opencv,python," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="图像的基本操作包括以下几点: 获取像素值, 并且修改 获取图像的属性, 比如长宽 操作图像的某一块区域 图像通道分离,再合并">
-<meta name="keywords" content="python,opencv">
+<meta name="keywords" content="opencv,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenCV学习之图像基本操作(四)">
 <meta property="og:url" content="http://yoursite.com/2017/10/18/OpenCV学习之图像基本操作-四/index.html">
@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-20f92d1bdccd8f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-98688ded996b3e6a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-f2a47217666bcf6e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-18T15:36:35.385Z">
+<meta property="og:updated_time" content="2017-10-18T15:38:01.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCV学习之图像基本操作(四)">
 <meta name="twitter:description" content="图像的基本操作包括以下几点: 获取像素值, 并且修改 获取图像的属性, 比如长宽 操作图像的某一块区域 图像通道分离,再合并">
@@ -356,7 +356,56 @@
 <a id="more"></a>
 <h2 id="获取图像像素值-并修改"><a href="#获取图像像素值-并修改" class="headerlink" title="获取图像像素值, 并修改"></a>获取图像像素值, 并修改</h2><p>首先加载一张彩色图像:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">img = cv2.imread(<span class="string">'messi.jpg'</span>)</div></pre></td></tr></table></figure></p>
 <p>查看一下图片的形状<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> np.shape(img)</div></pre></td></tr></table></figure></p>
-<p>输出为: <strong><em>(1050, 1680, 3)</em></strong><br>可能比较抽象, 我们打印一下 <strong><em>img</em></strong> 的具体内容  </p>
+<p>输出为: <strong><em>(1050, 1680, 3)</em></strong><br>可能比较抽象, 我们打印一下 <strong><em>img</em></strong> 的具体内容<br>可能比较抽象, 我们打印一下 <strong><em>img</em></strong> 的具体内容  </p>
+<pre><code class="python">[[[ <span class="number">41</span>  <span class="number">40</span>  <span class="number">42</span>]
+  [ <span class="number">36</span>  <span class="number">35</span>  <span class="number">37</span>]
+  [ <span class="number">40</span>  <span class="number">39</span>  <span class="number">41</span>]
+  ..., 
+  [ <span class="number">67</span>  <span class="number">65</span>  <span class="number">65</span>]
+  [ <span class="number">72</span>  <span class="number">68</span>  <span class="number">67</span>]
+  [ <span class="number">52</span>  <span class="number">48</span>  <span class="number">47</span>]]
+
+ [[ <span class="number">34</span>  <span class="number">33</span>  <span class="number">35</span>]
+  [ <span class="number">45</span>  <span class="number">44</span>  <span class="number">46</span>]
+  [ <span class="number">49</span>  <span class="number">48</span>  <span class="number">50</span>]
+  ..., 
+  [ <span class="number">40</span>  <span class="number">38</span>  <span class="number">38</span>]
+  [ <span class="number">53</span>  <span class="number">49</span>  <span class="number">48</span>]
+  [ <span class="number">45</span>  <span class="number">41</span>  <span class="number">40</span>]]
+
+ [[ <span class="number">34</span>  <span class="number">33</span>  <span class="number">35</span>]
+  [ <span class="number">59</span>  <span class="number">58</span>  <span class="number">60</span>]
+  [ <span class="number">40</span>  <span class="number">42</span>  <span class="number">43</span>]
+  ..., 
+  [ <span class="number">51</span>  <span class="number">46</span>  <span class="number">47</span>]
+  [ <span class="number">52</span>  <span class="number">48</span>  <span class="number">47</span>]
+  [ <span class="number">52</span>  <span class="number">48</span>  <span class="number">47</span>]]
+
+ ..., 
+ [[ <span class="number">39</span> <span class="number">129</span>  <span class="number">83</span>]
+  [ <span class="number">40</span> <span class="number">130</span>  <span class="number">84</span>]
+  [ <span class="number">47</span> <span class="number">137</span>  <span class="number">91</span>]
+  ..., 
+  [ <span class="number">47</span> <span class="number">117</span>  <span class="number">80</span>]
+  [ <span class="number">44</span> <span class="number">114</span>  <span class="number">77</span>]
+  [ <span class="number">72</span> <span class="number">142</span> <span class="number">105</span>]]
+
+ [[ <span class="number">34</span> <span class="number">126</span>  <span class="number">79</span>]
+  [ <span class="number">37</span> <span class="number">129</span>  <span class="number">82</span>]
+  [ <span class="number">43</span> <span class="number">133</span>  <span class="number">87</span>]
+  ..., 
+  [ <span class="number">42</span> <span class="number">115</span>  <span class="number">77</span>]
+  [ <span class="number">45</span> <span class="number">118</span>  <span class="number">80</span>]
+  [ <span class="number">64</span> <span class="number">137</span>  <span class="number">99</span>]]
+
+ [[ <span class="number">41</span> <span class="number">135</span>  <span class="number">88</span>]
+  [ <span class="number">43</span> <span class="number">137</span>  <span class="number">90</span>]
+  [ <span class="number">49</span> <span class="number">139</span>  <span class="number">93</span>]
+  ..., 
+  [ <span class="number">51</span> <span class="number">124</span>  <span class="number">86</span>]
+  [ <span class="number">53</span> <span class="number">126</span>  <span class="number">88</span>]
+  [ <span class="number">58</span> <span class="number">131</span>  <span class="number">93</span>]]]
+</code></pre>
 <p>由此可知, <strong><em>img</em></strong> 为一列表,列表内嵌套列表, 此为第一层, 列表内又嵌套列表, 此为第二层, 列表内又嵌套列表, 此为第三层, 一共有<strong><em>3</em></strong>层.<br>第一层的每一个元素表示图片的每一行, 第二层的每一个元素表示每一行的每一列, 第三层的每一个元素表示每一个像素(<em>由行列确定</em>)的三通道.如下图所示:<br><img src="http://upload-images.jianshu.io/upload_images/8225615-20f92d1bdccd8f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
 <p>了解了每一维的含义之后, 我们我们操控图片的像素值就容易多了<br>获取图片的第100行,100列处像素的三通道值  </p>
 <pre><code class="python">px = img[<span class="number">100</span>, <span class="number">100</span>]
@@ -417,9 +466,9 @@ cv2.imwrite(<span class="string">'21.jpg'</span>, b)
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
-          
             <a href="/tags/opencv/" rel="tag"># opencv</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
