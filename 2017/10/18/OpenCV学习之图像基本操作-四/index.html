@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-20f92d1bdccd8f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-98688ded996b3e6a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-f2a47217666bcf6e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-18T15:23:31.654Z">
+<meta property="og:updated_time" content="2017-10-18T15:26:13.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCV学习之图像基本操作(四)">
 <meta name="twitter:description" content="图像的基本操作包括以下几点: 获取像素值, 并且修改 获取图像的属性, 比如长宽 操作图像的某一块区域 图像通道分离,再合并">
@@ -363,6 +363,11 @@
 <span class="keyword">print</span> px
 </code></pre>
 <p>输出 <strong><em>[157 166 200]</em></strong>  </p>
+<p>获取100行, 100列处像素, 蓝色通道的的值:  </p>
+<pre><code class="python">blue = img[<span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>]
+<span class="keyword">print</span> blue
+</code></pre>
+<p>输出<strong><em> 157 </em></strong>  </p>
 <p>输出 <strong><em>[255, 255, 255]</em></strong>  </p>
 <h2 id="获得图片的属性"><a href="#获得图片的属性" class="headerlink" title="获得图片的属性"></a>获得图片的属性</h2><p>图片的属性包括图片矩阵的行数, 列数, 通道数, 图片的数据类型, 像素数等.  </p>
 <p>获取图片形状,输出为一元组,分别表示图片的行数,列数,通道数  </p>
