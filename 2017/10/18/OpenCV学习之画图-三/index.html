@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="从摄像头读取视频我们经常需用从摄像头捕获视频,OpenCV提供了一个非常简单的接口来从摄像头读取视频,接下来做一个非常简单的Demo,首先你要有一个摄像头,我们从摄像头读取视频,然后灰度化处理,最后显示出来.">
+<meta name="description" content="OpenCV学习之画图函数(三)所有的画图函数中,会经常传入一些共同参数,总结如下:  img : 可以理解为一块画布,我们在这块画布上画各种东西. color : 画笔的颜色, 对于 BGR 模式, 传入一个元组, 元组每一个元素代表一个通道, 对于灰度模式, 仅仅传入一个值即可,即灰度的强度. thickness : 表示画笔线条的粗细. 如果我们给一个封闭图形传入这个参数的值-1, 那么这个">
 <meta name="keywords" content="python,opencv">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenCV学习之读取视频(二)">
-<meta property="og:url" content="http://yoursite.com/2017/10/17/OpenCV学习之读取视频-二/index.html">
+<meta property="og:title" content="OpenCV学习之画图(三)">
+<meta property="og:url" content="http://yoursite.com/2017/10/18/OpenCV学习之画图-三/index.html">
 <meta property="og:site_name" content="西楚之歌">
-<meta property="og:description" content="从摄像头读取视频我们经常需用从摄像头捕获视频,OpenCV提供了一个非常简单的接口来从摄像头读取视频,接下来做一个非常简单的Demo,首先你要有一个摄像头,我们从摄像头读取视频,然后灰度化处理,最后显示出来.">
+<meta property="og:description" content="OpenCV学习之画图函数(三)所有的画图函数中,会经常传入一些共同参数,总结如下:  img : 可以理解为一块画布,我们在这块画布上画各种东西. color : 画笔的颜色, 对于 BGR 模式, 传入一个元组, 元组每一个元素代表一个通道, 对于灰度模式, 仅仅传入一个值即可,即灰度的强度. thickness : 表示画笔线条的粗细. 如果我们给一个封闭图形传入这个参数的值-1, 那么这个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-a34d811e4be36ee8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-18T03:35:01.944Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-5054e9975f0fd363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-18T04:45:27.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenCV学习之读取视频(二)">
-<meta name="twitter:description" content="从摄像头读取视频我们经常需用从摄像头捕获视频,OpenCV提供了一个非常简单的接口来从摄像头读取视频,接下来做一个非常简单的Demo,首先你要有一个摄像头,我们从摄像头读取视频,然后灰度化处理,最后显示出来.">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/8225615-a34d811e4be36ee8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="OpenCV学习之画图(三)">
+<meta name="twitter:description" content="OpenCV学习之画图函数(三)所有的画图函数中,会经常传入一些共同参数,总结如下:  img : 可以理解为一块画布,我们在这块画布上画各种东西. color : 画笔的颜色, 对于 BGR 模式, 传入一个元组, 元组每一个元素代表一个通道, 对于灰度模式, 仅仅传入一个值即可,即灰度的强度. thickness : 表示画笔线条的粗细. 如果我们给一个封闭图形传入这个参数的值-1, 那么这个">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/8225615-5054e9975f0fd363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/17/OpenCV学习之读取视频-二/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/18/OpenCV学习之画图-三/"/>
 
 
 
 
 
-  <title>OpenCV学习之读取视频(二) | 西楚之歌</title>
+  <title>OpenCV学习之画图(三) | 西楚之歌</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/17/OpenCV学习之读取视频-二/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/18/OpenCV学习之画图-三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林雨轩">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">OpenCV学习之读取视频(二)</h1>
+          <h1 class="post-title" itemprop="name headline">OpenCV学习之画图(三)</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-17T22:37:29+08:00">
-                2017-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T12:44:37+08:00">
+                2017-10-18
               </time>
             
 
@@ -312,7 +312,7 @@
 
           
           
-             <span id="/2017/10/17/OpenCV学习之读取视频-二/" class="leancloud_visitors" data-flag-title="OpenCV学习之读取视频(二)">
+             <span id="/2017/10/18/OpenCV学习之画图-三/" class="leancloud_visitors" data-flag-title="OpenCV学习之画图(三)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -343,15 +343,28 @@
       
 
       
-        <p><img src="http://upload-images.jianshu.io/upload_images/8225615-a34d811e4be36ee8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="从摄像头读取视频"><a href="#从摄像头读取视频" class="headerlink" title="从摄像头读取视频"></a>从摄像头读取视频</h2><p>我们经常需用从摄像头捕获视频,OpenCV提供了一个非常简单的接口来从摄像头读取视频,接下来做一个非常简单的Demo,首先你要有一个摄像头,我们从摄像头读取视频,然后灰度化处理,最后显示出来.<br><a id="more"></a><br>为了捕捉视频,首先需要创建一个<strong><em>VideoCapture</em></strong>对象,这个对象的参数既可以是摄像头的索引,也可以是视频文件的名字,通常情况下,只连接一个摄像头,因此我们传递一个索引0(或者-1), 如果你有第二个摄像头,可以传递1,以此类推. 接下来,我们可以一帧一帧的捕获来自摄像头的视频,注意最后记得释放创建的对象资源.代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">while</span>(<span class="keyword">True</span>):</div><div class="line">    <span class="comment"># Capture frame-by-frame</span></div><div class="line">    ret, frame = cap.read()</div><div class="line"></div><div class="line">    <span class="comment"># Our operations on the frame come here</span></div><div class="line">    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</div><div class="line"></div><div class="line">    <span class="comment"># Display the resulting frame</span></div><div class="line">    cv2.imshow(<span class="string">'frame'</span>,gray)</div><div class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == ord(<span class="string">'q'</span>):</div><div class="line">        <span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="comment"># When everything done, release the capture</span></div><div class="line">cap.release()</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
-<p>cap.read()函数返回一个<em>bool</em>值, 如果正确读取一帧, 其值为<em>True</em></p>
-<p>我们可以通过<strong><em>cap.get(propId)</em></strong>获取这个视频的一些属性, <strong><em>propId</em></strong>的取值为<em>0~18</em>, 每一个数字都代表这个视频的一个属性, <strong><em>propId</em></strong>的细节可以通这里查看:<a href="http://docs.opencv.org/modules/highgui/doc/reading_and_writing_video.html#videocapture-get" target="_blank" rel="external"><strong><em>Property Identifier</em></strong></a>.我们也可以通过<strong><em>cap.set(propId, value)</em></strong>来更改这些属性值.</p>
-<h2 id="从视频文件读取视频"><a href="#从视频文件读取视频" class="headerlink" title="从视频文件读取视频"></a>从视频文件读取视频</h2><p>方法与从摄像头读取视频类似,不同的是传入视频文件名而不再是摄像头索引,与此同时,在显示每一帧图像时,用<strong><em>cv2.waitKey()</em></strong>设置合适的时延, 如果值过小,视频就会非常快,如果很大,视频就会很慢,通常设置<strong><em>25ms</em></strong>, 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line">cap = cv2.VideoCapture(<span class="string">'vtest.avi'</span>)</div><div class="line"></div><div class="line"><span class="keyword">while</span>(cap.isOpened()):</div><div class="line">    ret, frame = cap.read()</div><div class="line"></div><div class="line">    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</div><div class="line"></div><div class="line">    cv2.imshow(<span class="string">'frame'</span>,gray)</div><div class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == ord(<span class="string">'q'</span>):</div><div class="line">        <span class="keyword">break</span></div><div class="line"></div><div class="line">cap.release()</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
-<h2 id="保存视频"><a href="#保存视频" class="headerlink" title="保存视频"></a>保存视频</h2><p>我们读取了视频, 并一帧一帧的进行处理, 最后我们需要保存视频,对于图片, 使用<strong><em>cv2.imwrite()</em></strong>足矣, 但是对于视频,稍微有点复杂.</p>
-<p>这一次,我们创建一个<strong><em>VideoWriter</em></strong>对象, 我们应该输出视频的文件名(例如:<em>out_put.avi</em> ), 指定<strong><em>FourCC</em></strong>码, 指定帧率, 指定每一帧的大小, 指定是否为彩色模式.</p>
-<p><strong><em>FourCC</em></strong>是一个4字节的视频编码器, 我们可以在<a href="http://www.fourcc.org/codecs.php" target="_blank" rel="external"><em>fourcc.org</em></a>找到所有的编码方式, 这个编码方式是取决于操作系统的. 对于<strong><em>MJPG</em></strong>这种编码方式,我们通过<strong><em>cv2.VideoWriter_fourcc(‘M’,’J’,’P’,’G’)</em></strong> 或者 <strong><em>cv2.VideoWriter_fourcc(\</em>‘MJPG)*</strong>来进行指定.</p>
-<p>以下代码,我们从摄像头捕捉一段视频 , 将每一帧进行垂直翻转, 最后保存.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="comment"># Define the codec and create VideoWriter object</span></div><div class="line">fourcc = cv2.VideoWriter_fourcc(*<span class="string">'XVID'</span>)</div><div class="line">out = cv2.VideoWriter(<span class="string">'output.avi'</span>,fourcc, <span class="number">20.0</span>, (<span class="number">640</span>,<span class="number">480</span>))</div><div class="line"></div><div class="line"><span class="keyword">while</span>(cap.isOpened()):</div><div class="line">    ret, frame = cap.read()</div><div class="line">    <span class="keyword">if</span> ret==<span class="keyword">True</span>:</div><div class="line">        frame = cv2.flip(frame,<span class="number">0</span>)</div><div class="line"></div><div class="line">        <span class="comment"># write the flipped frame</span></div><div class="line">        out.write(frame)</div><div class="line"></div><div class="line">        cv2.imshow(<span class="string">'frame'</span>,frame)</div><div class="line">        <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == ord(<span class="string">'q'</span>):</div><div class="line">            <span class="keyword">break</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="comment"># Release everything if job is finished</span></div><div class="line">cap.release()</div><div class="line">out.release()</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
+        <h1 id="OpenCV学习之画图函数-三"><a href="#OpenCV学习之画图函数-三" class="headerlink" title="OpenCV学习之画图函数(三)"></a>OpenCV学习之画图函数(三)</h1><p>所有的画图函数中,会经常传入一些共同参数,总结如下:</p>
+<ul>
+<li><strong><em>img</em></strong> : 可以理解为一块画布,我们在这块画布上画各种东西.</li>
+<li><strong><em>color</em></strong> : 画笔的颜色, 对于 <strong><em>BGR</em></strong> 模式, 传入一个元组, 元组每一个元素代表一个通道, 对于灰度模式, 仅仅传入一个值即可,即灰度的强度.</li>
+<li><strong><em>thickness</em></strong> : 表示画笔线条的粗细. 如果我们给一个封闭图形传入这个参数的值<strong><em>-1</em></strong>, 那么这个封闭图形将会被填充,封闭图形,例如圆.</li>
+<li><strong><em>lineType</em></strong> : 线条的类型, 例如<strong><em>8-connected/anti-aliesed </em></strong>, 默认为<strong><em>8-connected</em></strong> <h2 id="画线条"><a href="#画线条" class="headerlink" title="画线条"></a>画线条</h2>两点确定一条直线, 因此我们传入两个坐标表示一条直线的起点和终点. 下边我们创建一块黑色的”画布”, 并在上边画一条蓝色的线段.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line"><span class="comment"># Create a black image</span></div><div class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</div><div class="line"></div><div class="line"><span class="comment"># Draw a diagonal blue line with thickness of 5 px</span></div><div class="line">cv2.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<h2 id="画矩形"><a href="#画矩形" class="headerlink" title="画矩形"></a>画矩形</h2><p>为了画一个矩形, 我们需要传入矩形的左上和右下坐标. 下边,我们在画布的右上角画一个绿色的矩形.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cv2.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="画圆形"><a href="#画圆形" class="headerlink" title="画圆形"></a>画圆形</h2><p>为了画圆形,我们需要传入圆形的圆心和半径, 下边,我们在之前画的矩形的内部画一个圆.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cv2.circle(img,(<span class="number">447</span>,<span class="number">63</span>), <span class="number">63</span>, (<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>), <span class="number">-1</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="画多边形"><a href="#画多边形" class="headerlink" title="画多边形"></a>画多边形</h2><p>为了画多边形,我们需要把多边形的所有顶点坐标传入,多个顶点放入一个列表中传入.下边我们用黄色的画笔画一个多边形.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pts = np.array([[10,5],[20,30],[70,20],[50,10]], np.int32)</div><div class="line">pts = pts.reshape((-1,1,2))</div><div class="line">cv2.polylines(img,[pts],True,(0,255,255))</div></pre></td></tr></table></figure></p>
+<p><strong><em>注意 : </em></strong>如果<strong><em>cv2.polylines( )</em></strong>为<strong><em>False</em></strong>,则不会画一个闭合的多边形, 而是会把所有的顶点用一个线条连接起来.</p>
+<h2 id="画文本"><a href="#画文本" class="headerlink" title="画文本"></a>画文本</h2><p>为了画一段文本,需要指定以下参数:</p>
+<ul>
+<li>你想要画的文本字符串</li>
+<li>文本的坐标</li>
+<li>文本的字体</li>
+<li>文本的字体大小</li>
+<li>文本的颜色, 线条粗细, 线条类型…<br>下边, 我们用白色的画笔画”OpenCV”.<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">font = cv2.FONT_HERSHEY_SIMPLEX</div><div class="line">cv2.putText(img,<span class="string">'OpenCV'</span>,(<span class="number">10</span>,<span class="number">500</span>), font, <span class="number">4</span>,(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>),<span class="number">2</span>,cv2.LINE_AA)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="最终显示结果"><a href="#最终显示结果" class="headerlink" title="最终显示结果"></a>最终显示结果</h2><p><img src="http://upload-images.jianshu.io/upload_images/8225615-5054e9975f0fd363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
     </div>
@@ -384,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/17/OpenCV学习之读取图片-一/" rel="next" title="OpenCV学习之读取图片(一)">
-                <i class="fa fa-chevron-left"></i> OpenCV学习之读取图片(一)
+              <a href="/2017/10/17/Taylor-Swift-Look-What-You-Made-Me-Do/" rel="next" title="Taylor-Swift-Look-What-You-Made-Me-Do">
+                <i class="fa fa-chevron-left"></i> Taylor-Swift-Look-What-You-Made-Me-Do
               </a>
             
           </div>
@@ -393,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/17/Taylor-Swift-Look-What-You-Made-Me-Do/" rel="prev" title="Taylor-Swift-Look-What-You-Made-Me-Do">
-                Taylor-Swift-Look-What-You-Made-Me-Do <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从摄像头读取视频"><span class="nav-number">1.</span> <span class="nav-text">从摄像头读取视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从视频文件读取视频"><span class="nav-number">2.</span> <span class="nav-text">从视频文件读取视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存视频"><span class="nav-number">3.</span> <span class="nav-text">保存视频</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenCV学习之画图函数-三"><span class="nav-number">1.</span> <span class="nav-text">OpenCV学习之画图函数(三)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#画线条"><span class="nav-number">1.1.</span> <span class="nav-text">画线条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画矩形"><span class="nav-number">1.2.</span> <span class="nav-text">画矩形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画圆形"><span class="nav-number">1.3.</span> <span class="nav-text">画圆形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画多边形"><span class="nav-number">1.4.</span> <span class="nav-text">画多边形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画文本"><span class="nav-number">1.5.</span> <span class="nav-text">画文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终显示结果"><span class="nav-number">1.6.</span> <span class="nav-text">最终显示结果</span></a></li></ol></li></ol></div>
             
 
           </div>

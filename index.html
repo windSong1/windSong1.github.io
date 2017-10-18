@@ -262,6 +262,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/18/OpenCV学习之画图-三/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="林雨轩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="西楚之歌">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/18/OpenCV学习之画图-三/" itemprop="url">OpenCV学习之画图(三)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T12:44:37+08:00">
+                2017-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/18/OpenCV学习之画图-三/" class="leancloud_visitors" data-flag-title="OpenCV学习之画图(三)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="OpenCV学习之画图函数-三"><a href="#OpenCV学习之画图函数-三" class="headerlink" title="OpenCV学习之画图函数(三)"></a>OpenCV学习之画图函数(三)</h1><p>所有的画图函数中,会经常传入一些共同参数,总结如下:</p>
+<ul>
+<li><strong><em>img</em></strong> : 可以理解为一块画布,我们在这块画布上画各种东西.</li>
+<li><strong><em>color</em></strong> : 画笔的颜色, 对于 <strong><em>BGR</em></strong> 模式, 传入一个元组, 元组每一个元素代表一个通道, 对于灰度模式, 仅仅传入一个值即可,即灰度的强度.</li>
+<li><strong><em>thickness</em></strong> : 表示画笔线条的粗细. 如果我们给一个封闭图形传入这个参数的值<strong><em>-1</em></strong>, 那么这个封闭图形将会被填充,封闭图形,例如圆.</li>
+<li><strong><em>lineType</em></strong> : 线条的类型, 例如<strong><em>8-connected/anti-aliesed </em></strong>, 默认为<strong><em>8-connected</em></strong> <h2 id="画线条"><a href="#画线条" class="headerlink" title="画线条"></a>画线条</h2>两点确定一条直线, 因此我们传入两个坐标表示一条直线的起点和终点. 下边我们创建一块黑色的”画布”, 并在上边画一条蓝色的线段.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line"><span class="comment"># Create a black image</span></div><div class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</div><div class="line"></div><div class="line"><span class="comment"># Draw a diagonal blue line with thickness of 5 px</span></div><div class="line">cv2.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<h2 id="画矩形"><a href="#画矩形" class="headerlink" title="画矩形"></a>画矩形</h2><p>为了画一个矩形, 我们需要传入矩形的左上和右下坐标. 下边,我们在画布的右上角画一个绿色的矩形.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cv2.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="画圆形"><a href="#画圆形" class="headerlink" title="画圆形"></a>画圆形</h2><p>为了画圆形,我们需要传入圆形的圆心和半径, 下边,我们在之前画的矩形的内部画一个圆.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cv2.circle(img,(<span class="number">447</span>,<span class="number">63</span>), <span class="number">63</span>, (<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>), <span class="number">-1</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="画多边形"><a href="#画多边形" class="headerlink" title="画多边形"></a>画多边形</h2><p>为了画多边形,我们需要把多边形的所有顶点坐标传入,多个顶点放入一个列表中传入.下边我们用黄色的画笔画一个多边形.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pts = np.array([[10,5],[20,30],[70,20],[50,10]], np.int32)</div><div class="line">pts = pts.reshape((-1,1,2))</div><div class="line">cv2.polylines(img,[pts],True,(0,255,255))</div></pre></td></tr></table></figure></p>
+<p><strong><em>注意 : </em></strong>如果<strong><em>cv2.polylines( )</em></strong>为<strong><em>False</em></strong>,则不会画一个闭合的多边形, 而是会把所有的顶点用一个线条连接起来.</p>
+<h2 id="画文本"><a href="#画文本" class="headerlink" title="画文本"></a>画文本</h2><p>为了画一段文本,需要指定以下参数:</p>
+<ul>
+<li>你想要画的文本字符串</li>
+<li>文本的坐标</li>
+<li>文本的字体</li>
+<li>文本的字体大小</li>
+<li>文本的颜色, 线条粗细, 线条类型…<br>下边, 我们用白色的画笔画”OpenCV”.<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">font = cv2.FONT_HERSHEY_SIMPLEX</div><div class="line">cv2.putText(img,<span class="string">'OpenCV'</span>,(<span class="number">10</span>,<span class="number">500</span>), font, <span class="number">4</span>,(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>),<span class="number">2</span>,cv2.LINE_AA)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="最终显示结果"><a href="#最终显示结果" class="headerlink" title="最终显示结果"></a>最终显示结果</h2><p><img src="http://upload-images.jianshu.io/upload_images/8225615-5054e9975f0fd363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/17/Taylor-Swift-Look-What-You-Made-Me-Do/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -972,7 +1124,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
