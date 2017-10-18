@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-20f92d1bdccd8f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-98688ded996b3e6a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-f2a47217666bcf6e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-18T15:26:13.972Z">
+<meta property="og:updated_time" content="2017-10-18T15:27:41.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCV学习之图像基本操作(四)">
 <meta name="twitter:description" content="图像的基本操作包括以下几点: 获取像素值, 并且修改 获取图像的属性, 比如长宽 操作图像的某一块区域 图像通道分离,再合并">
@@ -359,15 +359,7 @@
 <p>输出为: <strong><em>(1050, 1680, 3)</em></strong><br>可能比较抽象, 我们打印一下 <strong><em>img</em></strong> 的具体内容  </p>
 <p>由此可知, <strong><em>img</em></strong> 为一列表,列表内嵌套列表, 此为第一层, 列表内又嵌套列表, 此为第二层, 列表内又嵌套列表, 此为第三层, 一共有<strong><em>3</em></strong>层.<br>第一层的每一个元素表示图片的每一行, 第二层的每一个元素表示每一行的每一列, 第三层的每一个元素表示每一个像素(<em>由行列确定</em>)的三通道.如下图所示:<br><img src="http://upload-images.jianshu.io/upload_images/8225615-20f92d1bdccd8f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
 <p>了解了每一维的含义之后, 我们我们操控图片的像素值就容易多了<br>获取图片的第100行,100列处像素的三通道值  </p>
-<pre><code class="python">px = img[<span class="number">100</span>, <span class="number">100</span>]
-<span class="keyword">print</span> px
-</code></pre>
-<p>输出 <strong><em>[157 166 200]</em></strong>  </p>
-<p>获取100行, 100列处像素, 蓝色通道的的值:  </p>
-<pre><code class="python">blue = img[<span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>]
-<span class="keyword">print</span> blue
-</code></pre>
-<p>输出<strong><em> 157 </em></strong>  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">px = img[<span class="number">100</span>, <span class="number">100</span>]</div><div class="line"><span class="keyword">print</span> px</div><div class="line">```  </div><div class="line">输出 ***[<span class="number">157</span> <span class="number">166</span> <span class="number">200</span>]***  </div><div class="line"></div><div class="line">获取<span class="number">100</span>行, <span class="number">100</span>列处像素, 蓝色通道的的值:  </div><div class="line">``` python</div><div class="line">blue = img[<span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>]</div><div class="line"><span class="keyword">print</span> blue</div><div class="line">```  </div><div class="line">输出*** <span class="number">157</span> ***  </div><div class="line"></div><div class="line">修改<span class="number">100</span>行,<span class="number">100</span>列处的像素值  </div><div class="line">``` python</div><div class="line">img[<span class="number">100</span>,<span class="number">100</span>] = [<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>]</div><div class="line"><span class="keyword">print</span> img[<span class="number">100</span>,<span class="number">100</span>]</div></pre></td></tr></table></figure>
 <p>输出 <strong><em>[255, 255, 255]</em></strong>  </p>
 <h2 id="获得图片的属性"><a href="#获得图片的属性" class="headerlink" title="获得图片的属性"></a>获得图片的属性</h2><p>图片的属性包括图片矩阵的行数, 列数, 通道数, 图片的数据类型, 像素数等.  </p>
 <p>获取图片形状,输出为一元组,分别表示图片的行数,列数,通道数  </p>
