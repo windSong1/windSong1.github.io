@@ -88,6 +88,8 @@
 <meta property="og:description" content="图片的算数操作,包括图片的加法, 减法, 位操作等.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-225797a7721bc3fb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-4859ae7420f8ce73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-5675a55daa18475e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-f9208a2aa6ff8b14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-ddf0fb21e79038e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-209b1d7b71568451.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -97,7 +99,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-7fcb610479b44e14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-1c49b8fbbb441b2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8225615-d129ed466580073f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-19T10:09:33.086Z">
+<meta property="og:updated_time" content="2017-10-19T13:25:34.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCV学习之图片的算数操作(五)">
 <meta name="twitter:description" content="图片的算数操作,包括图片的加法, 减法, 位操作等.">
@@ -362,7 +364,7 @@ y = np.uint8([<span class="number">10</span>])
 <span class="keyword">print</span> cv2.add(x, y)
 <span class="keyword">print</span> x+y
 </code></pre>
-<h2 id="图片混合"><a href="#图片混合" class="headerlink" title="图片混合"></a>图片混合</h2><p>仍然类似于图片相加, 只不过每个图片前面多了个系数,也就是权重, 图片加上小于1的权重,就会有一种透明的效果,如下公式:<br>$$g(x) = {(1-\alpha)}{f_0(x)}+{\alpha{f_1(x)}}$$<br>其中$\alpha$取值范围为[0,1], 调整$\alpha$的值, 会得到不同的混叠效果.<br>下边,我们把两张图片混叠在一起,给第一张权重0.7, 第二张权重0.3,<strong><em>cv2<br>.addWeighted()</em></strong>完成以下操作:<br>$$dst=\alpha{.img1}+\beta{.img2}+\gamma$$  </p>
+<h2 id="图片混合"><a href="#图片混合" class="headerlink" title="图片混合"></a>图片混合</h2><p>仍然类似于图片相加, 只不过每个图片前面多了个系数,也就是权重, 图片加上小于1的权重,就会有一种透明的效果,如下公式:<br><img src="http://upload-images.jianshu.io/upload_images/8225615-4859ae7420f8ce73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其中$\alpha$取值范围为[0,1], 调整$\alpha$的值, 会得到不同的混叠效果.<br>下边,我们把两张图片混叠在一起,给第一张权重0.7, 第二张权重0.3,<strong><em>cv2<br>.addWeighted()</em></strong>完成以下操作:<br><img src="http://upload-images.jianshu.io/upload_images/8225615-5675a55daa18475e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
 <pre><code class="python">img1 = cv2.imread(<span class="string">'ml.png'</span>)
 img2 = cv2.imread(<span class="string">'opencv_logo.jpg'</span>)
 
